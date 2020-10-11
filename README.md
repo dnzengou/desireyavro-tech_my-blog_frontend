@@ -2,8 +2,7 @@
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-With inspiration and starter source code taken from a
-[Tutorial] (https://www.linkedin.com/learning/react-creating-and-hosting-a-full-stack-site)
+With inspiration and starter source code taken from a [Tutorial](https://www.linkedin.com/learning/react-creating-and-hosting-a-full-stack-site)
 
 
 ## Available Scripts
