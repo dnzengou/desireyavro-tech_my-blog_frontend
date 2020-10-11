@@ -2,7 +2,8 @@
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-With inspiration and starter source code taken from a [LinkedIn Learning tutorial] (https://www.linkedin.com/learning/react-creating-and-hosting-a-full-stack-site)
+With inspiration and starter source code taken from a
+[Tutorial] (https://www.linkedin.com/learning/react-creating-and-hosting-a-full-stack-site)
 
 
 ## Available Scripts
@@ -212,7 +213,7 @@ SSH into our AWS Linux EC2 instance (with the <DNS IPv4 public> copied-pasted fr
 Install git using yum the package manager on this instance. Once installed, we can successfully run the git commands from within the instance. We use it to clone our git repo.
 
 ### curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-As we cannot use npm witin our cloud instance, this is the start of a command series to install NVM (node version manager) as an alternative in order to install and set up node on EC2 instance. [More here](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+As we cannot use npm witin our cloud instance, this is the start of a command series to install NVM (node version manager) as an alternative in order to install and set up node on EC2 instance. [More](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
 
 ### . ~/.nvm/nvm.sh
 Activate the NVM command, once it is installed.
