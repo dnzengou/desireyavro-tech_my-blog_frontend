@@ -113,6 +113,7 @@ launches the mongo shell on linux, where we can create and modify mongo database
 create a new database for our blog site, here named my-blog.  We then see `switched to db my-blog`.
 We want to create a collection called articles which contains the articles we used to have on our server code. Content of db is entered as an array of objects ( this way [{}])
 
+## Insert data from Mongo DB console
 ### db.articles.insert([{
 ...     name: 'learn-react',
 ...     upvotes: 0,
@@ -125,7 +126,51 @@ We want to create a collection called articles which contains the articles we us
 ...     name: 'my-thoughts-on-resumes',
 ...     upvotes: 0,
 ...     comments: [],
+...     }, {
+...     name: 'my-self-job',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-training-other-jobs',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-data-other-jobs',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-research-other-jobs',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-chemical-other-jobs',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-learning-other-jobs',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-alternative-jobs',
+...     upvotes: 0,
+...     comments: [],
+...     }, {
+...     name: 'my-alternative-other-jobs',
+...     upvotes: 0,
+...     comments: [],
 ...     }])
+ 
+ ## This should appear, confirming the that data have well been created
+ > BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 11,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
 
 
 ### db.articles.find({})
@@ -150,7 +195,70 @@ when joining frontend and backend with **fetch** and **POST** method, install th
 ### npm start && mongo
 Note. make sure that when testing the react app on both front and back end sides, app is launched from both my-blog and my-blog-backend, as well as mongodb initiated too.
 
+
+## Creating an SSHing into an AWS instance
+After having created a EC2 instance on AWS (running on Linux/Unix), named the key pair file <key_pair_name>.pem as you will, and downloaded it to your local host,
+### mkdir .ssh && mv ~/Downoads/<key_pair_name>.pem ~/.ssh/<key_pair_name>.pem
+Create a SSH directory, if not already existing (check in your home directory with `ls -al`), and move the key pair there.
+Then wen checking `ls -al .ssh`, this new key should appear in the right place.
+ec2-3-88-184-107.compute-1.amazonaws.com
+### chmod 400 ~/.ssh/<key_pair_name>.pem
+Ultimately, changes the permission for our .pem file.
+
+### ssh -i ~/.ssh/<key_pair_name>.pem ec2-user@<DNS IPv4 public>
+SSH into our AWS Linux EC2 instance (with the <DNS IPv4 public> copied-pasted from our new instance, found in the AWS console).
+
+### sudo yum install git
+Install git using yum the package manager on this instance. Once installed, we can successfully run the git commands from within the instance. We use it to clone our git repo.
+
+### curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+As we cannot use npm witin our cloud instance, this is the start of a command series to install NVM (node version manager) as an alternative in order to install and set up node on EC2 instance. [More here](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+
+### . ~/.nvm/nvm.sh
+Activate the NVM command, once it is installed.
+
+### nvm install 12.13.0
+Install node v12.13.0 (the one in this project). Then we can npm commands.
+
+### npm install -g npm@latest
+Install the latest version of npm, globally.
+
+
+## Install Mongo DB on the AWS EC2 instance
+### grep ^NAME  /etc/*release
+Once git and node installed on the instance, install mongodb as well. Start with checking the linux version running on the instance.
+
+### sudo nano /etc/yum.repos.d/mongodb-org-4.4.repo
+Configure the package management system (yum). It creates and writes in this file `/etc/yum.repos.d/mongodb-org-4.4.repo` the instructions available [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/), so that you can install MongoDB directly using yum
+
+### sudo yum install -y mongodb-org
+Install the MongoDB packages.
+
+### sudo service mongod start
+Check if MongoDB is actually running on our instance. `start mongod.service` should then appear.
+
+### mongo
+Open then a mongo shell in our instance. We then want to load new data (here, pages) into our new database so it has something to load.
+
+### git clone https://github.com/dnzengou/desireyavro-my-blog.git
+(Using HTTPS link) from within the instance command, allows us to clone our repo to the AWS cloud instance. Then run `npm install` from within the repo to install all the node modules that were ignored (`.gitignore`) when pushing code from local to github server.
+
+### npm install -g forever
+### forever start -c "npm start" .
+Use forever package to run continuously our server (instead of `npm start` as used on our local machine). Our server should then be running on port 8000. To check this, run `forever list` that shows that our app is indeed up and running.
+
+However, since our app runs on port 8000 but we want to be able to access it at the default http port (80), we want to map our port 80 on our AWS instance to port 8000 on our node server:
+### sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000
+
+
+## To access the running instance of our app through a browser
+1. Check the security group on the AWS instance console (g. `launch-wizard-2`)
+2. Go to `Security Groups` tab, select the one that corresponds to the instance security group. Click on the `inbound` tab, then Edit: `Add Rule`; for the `Source` choose `anywhere` (we can choose MyIp later one). Our app should then be accessible from the outside world, reachable at our `<DNS IPv4 public>` <...>.amazonaws.com
+
+
 ***
+
+
 
 ## Learn More
 
