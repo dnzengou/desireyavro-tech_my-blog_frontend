@@ -1,14 +1,14 @@
 const articles = [
     {
-        name: 'learn-react',
-        title: 'IT Technician & Business Advisor, SLÄGGAN AB, Sweden',
+        name: 'slaggan',
+        title: 'IT Technician & Business Advisor, Släggan AB, Sweden',
         content: [
             `Advising and assisting in the technology and business related aspects of 
             the ongoing development of a partner startup’s geolocation-based mobile application 
             for on-demand media content publication.`,
         ]
     },    {
-        name: 'learn-node',
+        name: 'blockchain-dlt',
         title: 'Board Member, Blockchain DLT, Rwanda',
         content: [
             `Over a series of meetups with high-quality guests and distributed technology practitioners, we have
@@ -17,8 +17,8 @@ const articles = [
             undergoing with the endorsement of the Ministry of Innovation and ICT as well as development partners.`,
         ]
     },     {
-        name: 'my-thoughts-on-resumes',
-        title: 'Senior Industrial Technology Expert Advisor, NIRDA, Rwanda',
+        name: 'nirda',
+        title: 'Senior Industrial Technology Expert Advisor, NIRDA (Government of Rwanda), Rwanda',
         content: [
             `For the Government of Rwanda’s (GoR) NIRDA - National Industrial Research and Development Agency - I led the country's first STEM laboratory and startups
             incubation/acceleration programme, to tackle complex wicked challenges in the context of Industry 4.0,
@@ -28,7 +28,7 @@ const articles = [
             etc.). I was also Technical Working Group member for several government’s strategies.`,
         ]
     },     {
-        name: 'my-self-job',
+        name: 'geekali',
         title: 'Entrepreneur, web and business development, Geekali Ltd, International',
         content: [
             `Discovering actionable insights to be shared with clients and partners between Europe and Africa, I
@@ -38,7 +38,7 @@ const articles = [
             repositories to the Cloud (Azure, IBM Bluemix, AWS or GP), GIS and CAD with Blender and Unity.`,
         ]
     },     {
-        name: 'my-training-other-jobs',
+        name: 'google',
         title: 'Program Manager, Training Material Specialist, Google, Belgium',
         content: [
             `In this fixed-term role, I led the design, delivery and deployment in the EMEA region the first Operational
@@ -49,8 +49,8 @@ const articles = [
             `,
         ]
     },     {
-        name: 'my-data-other-jobs',
-        title: 'Data Analyst, Project Management, International SOS, USA',
+        name: 'isos',
+        title: 'Data Analyst, Project Management, International SOS (ISOS), USA',
         content: [
             `Supporting the medical consulting business units in the America’s division with producing business
             intelligence reports on clients usage of the company’s services, leveraging on specific data processing (R,
@@ -59,8 +59,8 @@ const articles = [
             preparedness plans development (Ebola, Influenza) and the division’s data migration to SharePoint.`,
         ]
     },     {
-        name: 'my-research-other-jobs',
-        title: 'Research Engineer, Laboratório Regional de Engenharia Civil, Portugal',
+        name: 'lrec',
+        title: 'Research Engineer, Laboratório Regional de Engenharia Civil (LREC), Portugal',
         content: [
             `Within Seismic Engineering and Metrology unit,
             - Application of a Non-destructive Testing and Evaluation (NDT&E) technique in Civil Engineering, especially on wooden and concrete structures
@@ -68,8 +68,8 @@ const articles = [
             - Infrared radiation (IR) thermography on Sao Miguel edifices`,
         ]
     },     {
-        name: 'my-chemical-other-jobs',
-        title: 'Laboratory Technician - Water Quality, Instituto de Inovação Tecnológica dos Açores, Portugal',
+        name: 'inova',
+        title: 'Laboratory Technician - Water Quality, Instituto de Inovação Tecnológica dos Açores (INOVA), Portugal',
         content: [
             `Within Leonardo Da Vinci Program,
             - Ensure implementation of the Quality Management System for compliance with quality standards (ISO 9377 - for Water quality, and ) and customer needs
@@ -79,7 +79,7 @@ const articles = [
             - Assist in regular CIP (Clean In Place) of lab equipements.`,
         ]
     },     {
-        name: 'my-learning-other-jobs',
+        name: 'caterpillar',
         title: 'Senior Learning Consultant & Machining Master Trainer, Caterpillar, Belgium',
         content: [
             `Working as a Lean Six Sigma ’Champion’ and project coordinator within the Caterpillar Production
@@ -90,7 +90,7 @@ const articles = [
             Kaizen, Six Sigma for continuous improvement, and Standard Work Environment.`,
         ]
     },     {
-        name: 'my-alternative-jobs',
+        name: 'saint-jean-clinical',
         title: 'Technologist Trainee, Saint Jean clinical, Belgium',
         content: [
             `Within the Radiotherapy department, I ran a Quality Control study intended to explore the link between
@@ -99,8 +99,8 @@ const articles = [
             validation simulating patient's X-ray exam with the use of irradiated ‘phantoms’ of plexiglass.`,
         ]
     },     {
-        name: 'my-alternative-other-jobs',
-        title: 'Researcher Trainee, Federal Agency of Nuclear Control, Belgium',
+        name: 'fanc',
+        title: 'Researcher Trainee, Federal Agency of Nuclear Control (FANC), Belgium',
         content: [
             `In the Land Surveillance & Natural Ray division, as part of a research project on the mapping of the
             environmental radioactivity due to radon, I participated in key activities as part of the national Radon plan:

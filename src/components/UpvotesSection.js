@@ -10,10 +10,14 @@ const UpvotesSection = ({ articleName, upvotes, setArticleInfo }) => {
     }
     return (
         <div id="upvotes-section">
-            <button onClick={() => upvoteArticle()}>Add Upvote</button>
-            <p><i>This post has been upvoted <b>{upvotes}</b> times</i></p>
         </div>
     );
+    //return (
+    //    <div id="upvotes-section">
+    //        <button onClick={() => upvoteArticle()}>Add Upvote</button>
+    //        <p><i>This post has been upvoted <b>{upvotes}</b> times</i></p>
+    //    </div>
+    //);
 }
 
 export default UpvotesSection;
