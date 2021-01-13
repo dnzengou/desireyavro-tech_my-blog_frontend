@@ -1,5 +1,5 @@
 # My blog
-# *desireyavro.tech* https://main.d3cjibilpg2s1x.amplifyapp.com/
+# (desireyavro.tech)[https://main.d3cjibilpg2s1x.amplifyapp.com]
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
